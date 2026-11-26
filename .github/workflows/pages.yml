@@ -1,12 +1,10 @@
 # Builds the site and publishes dist/ to GitHub Pages on every push to main.
-# page_build: while Settings > Pages > Source is still "Deploy from a branch", GitHub also
-# publishes the raw repository after each push; this run follows it and puts the built site back.
-# Once the source is "GitHub Actions", that branch build stops and page_build never fires.
+# Needs Settings > Pages > Source: GitHub Actions (with "Deploy from a branch", GitHub also
+# publishes the raw repository after each push and can replace the built site).
 name: Pages
 on:
   push:
     branches: [main]
-  page_build:
   workflow_dispatch:
 permissions:
   contents: read
